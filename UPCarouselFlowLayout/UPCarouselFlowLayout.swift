@@ -133,7 +133,9 @@ open class UPCarouselFlowLayout: UICollectionViewFlowLayout {
             targetContentOffset = CGPoint(x: proposedContentOffset.x, y: floor(closest.center.y - midSide))
         }
         
-        return targetContentOffset
+        collectionView.setContentOffset(targetContentOffset, animated: true)
+        
+        return proposedContentOffset
     }
 }
 
